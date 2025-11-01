@@ -6,17 +6,19 @@ import random
 pygame.init()
 
 # --- 2. Pengaturan Layar dan Konstanta ---
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 544
+SCREEN_HEIGHT = 416
 BLACK = (0, 0, 0)
 # Kita tidak perlu lagi warna WHITE, YELLOW, RED, tapi biarkan saja
 WHITE = (255, 255, 255)
 YELLOW = (255, 255, 0)
 RED = (255, 0, 0)
 
-pygame.display.set_caption("RPG Sederhana - Dengan Sprite!")
+pygame.display.set_caption("\"nyari koin sambil ngindarin musuh\" ahh game")
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 clock = pygame.time.Clock()
+background_image = pygame.image.load("background.png").convert()
+
 
 # Memuat Font (Sama seperti sebelumnya)
 font = pygame.font.SysFont(None, 36)
@@ -97,10 +99,6 @@ class Enemy(pygame.sprite.Sprite):
         # ### BARU ### Menggunakan gambar yang sudah di-load
         self.image = ENEMY_IMG
         
-        # Hapus/Komentari kode lama:
-        # self.image = pygame.Surface([40, 40])
-        # self.image.fill(RED)
-        
         # Sisa kode __init__ sama persis
         self.rect = self.image.get_rect()
         self.rect.x = random.randint(0, SCREEN_WIDTH - 40)
@@ -167,6 +165,11 @@ def game_loop():
                 game_over = True
 
         screen.fill(BLACK)
+        try:
+            screen.blit(background_image, (0, 0))
+        except:
+            pass
+
         all_sprites.draw(screen)
 
         score_text = f"Skor: {score}"
