@@ -4,14 +4,13 @@ import random
 
 # --- 1. Inisialisasi Pygame ---
 pygame.init()
-pygame.mixer.init() # ### BARU ### Inisialisasi modul audio
+pygame.mixer.init()
 
 # --- 2. Pengaturan Layar dan Konstanta ---
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-# ... (warna lain bisa dihapus jika mau) ...
 
 pygame.display.set_caption("RPG Sederhana - Dengan Suara!")
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
