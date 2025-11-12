@@ -1,0 +1,26 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    color: #333333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+::selection {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background-color: #444444;
+    color: #ffffff;
+}
